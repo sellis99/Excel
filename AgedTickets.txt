@@ -4,11 +4,7 @@
 Sub Aged()
     'Age=today minus date of entry
     Range("F2").Select
-    ActiveCell.FormulaR1C1 = "=TODAY()-RC[3]"
-    
-    'delete a blank column
-    Columns("G:G").Select
-    Selection.Delete Shift:=xlToLeft
+    ActiveCell.FormulaR1C1 = "=TODAY()-RC[2]"
     
     'copy/paste the formula
     Range("F2").Select
@@ -33,9 +29,6 @@ Sub Aged()
     'delete the last row which is a summary count
     Selection.EntireRow.Delete
   
-    'delete empty columns
-    Columns("K:M").Select
-    Selection.Delete Shift:=xlToLeft
     Range("A1").Select
     'turn on filtering
     Selection.AutoFilter
